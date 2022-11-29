@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import IsLoading from './components/IsLoading'
+import ProtectedRoutes from './components/ProtectedRoutes'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Products from './pages/Products'
@@ -14,14 +15,16 @@ function App() {
     <>
       <HashRouter>
         {
-        isLoading && <IsLoading/>
+          isLoading && <IsLoading />
         }
         <div className="App">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/products/:id' element={<Products />} />
-            <Route path='/purchases' element={<Purchases />} />
             <Route path='/login' element={<Login />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path='/purchases' element={<Purchases />} />
+            </Route>
           </Routes>
         </div>
       </HashRouter>
