@@ -49,9 +49,6 @@ const Products = () => {
       <div className="relate-container">
         {
           relateProducts.map(item => (
-            // <div className="relate-container">
-            //   <h4>{item.title}</h4>
-            // </div>
             <>
               <div className='card'>
                 <Link to={`/products/${item.id}`} style={{textDecoration:'none'}}>{
@@ -70,7 +67,6 @@ const Products = () => {
           ))
         }
       </div>
-      {/* carrusel en otro componente */}
     </>
   );
 };
