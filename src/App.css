@@ -310,7 +310,7 @@ form input:focus {
 }
 
 /* CARDS */
-.card-container {
+.card-containerr {
   width: 100%;
   height: auto;
   display: flex;
@@ -320,7 +320,7 @@ form input:focus {
   margin-top: 3%;
 }
 
-.card {
+.cardd {
   width: 100%;
   height: 290px;
   max-width: 280px;
@@ -337,8 +337,8 @@ form input:focus {
   align-items: center;
 }
 
-.card,
-.card * {
+.cardd,
+.cardd * {
   box-sizing: border-box;
   transition: 400ms;
 }
@@ -380,16 +380,16 @@ form input:focus {
   gap: 20px;
 }
 
-.card:hover .card-img {
+.cardd:hover .card-img {
   cursor: pointer;
   transform: translateY(-48px);
 }
 
-.card:hover .card-img img {
+.cardd:hover .card-img img {
   transform: translate(-0px, 50px) scale(1.2);
 }
 
-.card:hover .card-content {
+.cardd:hover .card-content {
   opacity: 1;
 }
 
@@ -479,8 +479,9 @@ form input:focus {
   transition: 0.3s;
 }
 
-.add:hover {
+.add:hover{
   transform: scale(1.1);
+  font-size: 0.9rem;
 }
 
 .relate-container {
@@ -537,4 +538,21 @@ form input:focus {
   font-size: 1.1rem;
   cursor: pointer;
   border-radius: 8px;
+}
+
+.purchessss{
+ width: 100%;
+ height: auto;
+ padding: 50px 100px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ gap: 20px;
+}
+
+.cartttt{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }

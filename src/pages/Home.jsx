@@ -17,8 +17,6 @@ const Home = () => {
       .then(res => setCategory(res.data.data.categories))
   }, [])
 
-  console.log(category)
-
   return (
     <>
       <NavBar />
@@ -46,11 +44,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="card-container">
+        <div className="card-containerr">
           {
             selector.map(product => (
               <>
-                <div className='card'>
+                <div className='cardd' key={product.id}>
                   <Link to={`/products/${product.id}`} style={{ textDecoration: 'none' }}>{
                     <div className="card-img" key={product.id}>
                       <img src={product.productImgs[0]} alt="" />
@@ -60,7 +58,7 @@ const Home = () => {
                   </Link>
                   <div className="card-content">
                     <p>$ {product.price}</p>
-                    <a style={{ cursor: 'pointer' }}><i className="fa-solid fa-cart-plus" style={{ backgroundColor: '#b0d9db', padding: '10px', textAlign: 'center', borderRadius: '50%', color: 'white', fontSize: '1.2rem' }}></i></a>
+                    {/* <a style={{ cursor: 'pointer' }}><i className="fa-solid fa-cart-plus" style={{ backgroundColor: '#b0d9db', padding: '10px', textAlign: 'center', borderRadius: '50%', color: 'white', fontSize: '1.2rem' }}></i></a> */}
                   </div>
                 </div>
               </>

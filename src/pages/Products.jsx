@@ -1,15 +1,17 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import Carouselimg from '../components/Carouselimg';
 import NavBar from '../components/NavBar';
+import { addCartThunk } from '../store/slices/cart.slice';
 import { getProductsThunk } from '../store/slices/products.slice';
 
 const Products = () => {
 
   const { id } = useParams()
   const dispacth = useDispatch()
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     dispacth(getProductsThunk())
@@ -21,7 +23,14 @@ const Products = () => {
 
   const relateProducts = product.filter(newItem => newItem.category?.id === selectProduct.category?.id)
 
-  console.log(relateProducts)
+  const add = () => {
+    const addToCart = {
+      id: selectProduct?.id,
+      quantity: search
+    }
+    // console.log(addToCart)
+    dispacth(addCartThunk(addToCart))
+  }
 
   return (
     <>
@@ -41,7 +50,12 @@ const Products = () => {
             </div>
             <p>{selectProduct?.description}</p>
             <p>$ {selectProduct?.price}</p>
-            <a className='add'> add to cart</a>
+            <input type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+            <a className='add' onClick={add}> add to cart</a>
+            {/* <button onClick={addToCart}>ADD to cart</button> */}
           </div>
         </div>
       </div>
@@ -51,10 +65,10 @@ const Products = () => {
           relateProducts.map(item => (
             <>
               <div className='card'>
-                <Link to={`/products/${item.id}`} style={{textDecoration:'none'}}>{
+                <Link to={`/products/${item.id}`} style={{ textDecoration: 'none' }}>{
                   <div className="card-img" key={item.id}>
                     <img src={item.productImgs[0]} alt="" />
-                    <h3 className='card-title' style={{color: 'black', fontSize: '1rem' }}>{item.title}</h3>
+                    <h3 className='card-title' style={{ color: 'black', fontSize: '1rem' }}>{item.title}</h3>
                   </div>
                 }
                 </Link>
