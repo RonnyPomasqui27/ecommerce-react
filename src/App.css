@@ -357,6 +357,13 @@ form input:focus {
   /* mix-blend-mode: color-burn; */
 }
 
+.card-title {
+  color: black;
+  font-size: 1rem;
+  transition: 0.4s;
+  opacity: 1;
+}
+
 .card-title p {
   text-align: center;
   margin-top: 8px;
@@ -383,6 +390,10 @@ form input:focus {
 .cardd:hover .card-img {
   cursor: pointer;
   transform: translateY(-48px);
+}
+
+.cardd:hover .card-title {
+  opacity: 0;
 }
 
 .cardd:hover .card-img img {
@@ -479,7 +490,7 @@ form input:focus {
   transition: 0.3s;
 }
 
-.add:hover{
+.add:hover {
   transform: scale(1.1);
   font-size: 0.9rem;
 }
@@ -503,14 +514,14 @@ form input:focus {
   padding: 5px 10px;
 }
 
-.category-title{
+.category-title {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 5px 10px;
 }
 
-.barra{
+.barra {
   width: 100%;
   margin-top: 2%;
   display: flex;
@@ -519,7 +530,7 @@ form input:focus {
   gap: 5px;
 }
 
-.barra input{
+.barra input {
   min-width: 400px;
   padding: 5px 30px;
   outline: none;
@@ -528,7 +539,7 @@ form input:focus {
   border-radius: 8px;
 }
 
-.barra button{
+.barra button {
   color: white;
   background-color: var(--primary-color);
   min-width: 100px;
@@ -540,17 +551,17 @@ form input:focus {
   border-radius: 8px;
 }
 
-.purchessss{
- width: 100%;
- height: auto;
- padding: 50px 100px;
- display: flex;
- flex-direction: column;
- justify-content: center;
- gap: 20px;
+.purchessss {
+  width: 100%;
+  height: auto;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
-.cartttt{
+.cartttt {
   display: flex;
   justify-content: center;
   flex-direction: column;

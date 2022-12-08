@@ -52,7 +52,7 @@ const Home = () => {
                   <Link to={`/products/${product.id}`} style={{ textDecoration: 'none' }}>{
                     <div className="card-img" key={product.id}>
                       <img src={product.productImgs[0]} alt="" />
-                      <h3 className='card-title' style={{ color: 'black', fontSize: '1rem' }}>{product.title}</h3>
+                      <h3 className='card-title' >{product.title}</h3>
                     </div>
                   }
                   </Link>

@@ -28,7 +28,7 @@ const Products = () => {
       id: selectProduct?.id,
       quantity: search
     }
-    // console.log(addToCart)
+    console.log(addToCart)
     dispacth(addCartThunk(addToCart))
   }
 
@@ -64,7 +64,7 @@ const Products = () => {
         {
           relateProducts.map(item => (
             <>
-              <div className='card'>
+              <div className='cardd'>
                 <Link to={`/products/${item.id}`} style={{ textDecoration: 'none' }}>{
                   <div className="card-img" key={item.id}>
                     <img src={item.productImgs[0]} alt="" />
